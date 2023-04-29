@@ -2,7 +2,6 @@ package com.jaax.dogedex.doglist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -39,8 +38,10 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewHolder>(DiffCallback) {
 
     inner class DogViewHolder(val binding: DogListItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(dog: Dog) {
-            binding.dogName.text = dog.name
-            onItemClickListener?.invoke(dog)
+            binding.dogName.text = dog.nameES
+            binding.root.setOnClickListener {
+                onItemClickListener?.invoke(dog)
+            }
         }
     }
 }

@@ -3,8 +3,10 @@ package com.jaax.dogedex.doglist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.jaax.dogedex.databinding.ActivityDogListBinding
 import com.jaax.dogedex.dogdetail.DogDetailActivity
 import com.jaax.dogedex.dogdetail.DogDetailActivity.Companion.DOG_KEY

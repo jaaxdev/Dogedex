@@ -1,11 +1,11 @@
 package com.jaax.dogedex.models
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
-data class DogListApiResponse(
+class DogListApiResponse(
     val message: String,
-    @SerializedName("is_success")
+    @field:Json(name = "is_success")
     val isSuccess: Boolean,
-    @SerializedName("data")
+    @field:Json(name = "data")
     val dogListResponse: DogListResponse
 )
