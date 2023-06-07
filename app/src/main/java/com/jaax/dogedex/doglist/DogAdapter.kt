@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.jaax.dogedex.databinding.DogListItemBinding
 
 class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewHolder>(DiffCallback) {
@@ -38,10 +39,10 @@ class DogAdapter: ListAdapter<Dog, DogAdapter.DogViewHolder>(DiffCallback) {
 
     inner class DogViewHolder(val binding: DogListItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(dog: Dog) {
-            binding.dogName.text = dog.nameES
-            binding.root.setOnClickListener {
+            binding.dogListItemLayout.setOnClickListener {
                 onItemClickListener?.invoke(dog)
             }
+            binding.dogImage.load(dog.imageURL)
         }
     }
 }

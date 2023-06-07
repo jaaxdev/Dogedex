@@ -8,4 +8,6 @@
     <string name="dog_not_found">Perro no encontrado</string>
     <string name="dog_index_format">#%d</string>
     <string name="dog_life_expectancy_format">%s años</string>
+    <string name="unknown_error_host">Error de descarga, no internet</string>
+    <string name="unknown_error">Error desconocido</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jaax.dogedex.api.ApiResponsesStatus
 import com.jaax.dogedex.databinding.ActivityDogListBinding
@@ -28,7 +29,7 @@ class DogListActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
         binding.recyclerView.adapter = adapter
 
         dogListViewModel.dogList.observe(this) { dogList ->
@@ -41,7 +42,7 @@ class DogListActivity : AppCompatActivity() {
                 is ApiResponsesStatus.Loading -> binding.loadingWheel.visibility = View.VISIBLE
                 is ApiResponsesStatus.Error -> {
                     binding.loadingWheel.visibility = View.GONE
-                    Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, status.messageId, Toast.LENGTH_SHORT).show()
                 }
             }
         }
