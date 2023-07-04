@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,8 @@
         android:theme="@style/Theme.Dogedex"
         tools:targetApi="31">
         <activity
-            android:name=".doglist.DogListActivity"
-            android:exported="true">
+            android:name=".LoginActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +23,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".doglist.DogListActivity"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".dogdetail.DogDetailActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
     </application>
 
 </manifest>
