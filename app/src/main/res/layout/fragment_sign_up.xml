@@ -48,14 +48,30 @@
                 android:hint="Contraseña"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtInputPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtInputUsername">
+
+            <EditText
+                android:id="@+id/etPasswordConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="Registrar"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/txtInputPassword"
+            app:layout_constraintTop_toBottomOf="@id/txtInputPasswordConfirm"
             app:layout_constraintBottom_toTopOf="@+id/tvNoAccount"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -67,12 +83,12 @@
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:text="No tienes una cuenta?"
-            app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+            app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnFinalizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
