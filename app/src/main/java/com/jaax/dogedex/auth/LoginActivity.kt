@@ -8,7 +8,7 @@ import com.jaax.dogedex.auth.ui.login.LoginFragment
 import com.jaax.dogedex.auth.ui.login.LoginFragmentDirections
 import com.jaax.dogedex.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity(), LoginFragment.LoginFragmentActions {
+class LoginActivity : AppCompatActivity(), LoginFragment.LoginFragmentActions, SignUpFragment.SignUpFragmentActions {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,4 +20,14 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginFragmentActions {
         findNavController(R.id.nav_host_fragment)
             .navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
     }
+
+    override fun onSignUpFieldsValidated(
+        email: String,
+        password: String,
+        passwordConfirmation: String
+    ) {
+        TODO("Not yet implemented")
+    }
+
+
 }

@@ -12,6 +12,12 @@ suspend fun <T> makeNetworkCall(call: suspend () -> T): ApiResponsesStatus<T> {
         } catch(e: UnknownHostException) {
             ApiResponsesStatus.Error(R.string.unknown_error_host)
         } catch(e: Exception) {
+            when(e.message) {
+                "signup_error" -> R.string.signup_error
+                "signin_error" -> R.string.signin_error
+                "user_already_exists" -> R.string.user_already_exists
+                else -> R.string.unknown_error
+            }
             ApiResponsesStatus.Error(R.string.unknown_error)
         }
     }
